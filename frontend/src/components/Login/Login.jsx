@@ -43,7 +43,7 @@ class Login extends Component {
                 })
             } else {
                 this.setState({
-                    message: 'Unable to log in'
+                    message: 'Incorrect name or password'
                 })
             }
         });
@@ -68,7 +68,22 @@ class Login extends Component {
 
     render() {
         return(
-            <form className="Login" action="/" onSubmit={this.onSubmit}>
+            <div>
+              <div className="ui vertical masthead center aligned segment landing-image">
+                <div className="ui container">
+                  <div className="ui large inverted secondary network menu">
+                    <Link to="/" className="item" id="logo">Clearity</Link>
+                    <div className="right item">
+                        <Link to="/login" className="item">
+                      <a className="ui button">Log in</a>
+                      </Link>
+                        <Link to="/register" className="item">
+                      <a className="ui primary button" id="theme-blue">Sign Up</a>
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                <form className="Login" action="/" onSubmit={this.onSubmit}>
             <Card className="Login__content">
                 <div>
                     <h1>Login</h1>
@@ -85,6 +100,9 @@ class Login extends Component {
                 </div>
             </Card>
         </form>
+              </div>
+            </div>
+        
     )
 }
 }
